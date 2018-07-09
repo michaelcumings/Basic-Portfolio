@@ -30,6 +30,11 @@ body {
 }
 
 .everything {
+    /* width: 960px; */
+    /* margin: 0 auto; */
+}
+
+.container {
     width: 960px;
     margin: 0 auto;
 }
@@ -37,16 +42,16 @@ body {
 header {
     /* position: absolute; */
     overflow: auto;
-    width: 100%;
+    /* width: 100%; */
   background: #ffffff;
-  border-bottom: 5px solid #000000;
+  border-bottom: 2px solid #cccccc;
   /* border-bottom-color: #cccccc; */
 }
 
 #mainheadtitle {
     float: left;
     padding: 10px 20px;
-    width: 35%;
+    width: 30%;
     background: #4aaaa5;
     color: #ffffff;
    
@@ -98,23 +103,25 @@ h1 {
  
 }
 
-hr {
+/* hr {
     height: 0px;
     border-color: inherit;
     background-color: #ffffff;
-}
+} */
 
 #aboutme {
+    border-bottom: 2px solid;
+    border-color: #dddddd;
     color: #4aaaa5;
     /* padding-top: 20px; */
 }
 
 #main-bio {
     /* position: relative; */
-    top: 20px;
+    margin: 30px 0px;
     background-color: #ffffff;
-    border: 0px 0px 5px 0px;
-    border-color: #dddddd;
+    /* border-bottom: 5px solid;
+    border-color: #dddddd; */
     color: #777777;
     padding: 10px 20px 20px 20px;
 }
