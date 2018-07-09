@@ -1,0 +1,117 @@
+/*
+Stylesheet #1
+=============
+Each of these CSS elements is associated with an HTML Element, Class, or ID.
+Flip between this CSS file and the HTML to see how things line up.
+Experiment with deleting lines of code from the CSS to see how it affects the web page when you refresh in the browser.
+*/
+
+body {
+  /* Box-model */
+  /* padding: 0; */
+
+  /* Positioning */
+  /* width: 960px;
+  margin: 0 auto; */
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+
+  /* Typography */
+
+  font-size: 18px;
+  line-height: 150%;
+  color: #333;
+
+  /* Visual */
+  background: #efeee7;
+}
+
+#bio-image {
+    padding: 20px 20px 20px 0px;
+}
+
+.everything {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    /* position: absolute; */
+    width: 100%;
+  background: #ffffff;
+  border-bottom: 5px #000000;
+  /* border-bottom-color: #cccccc; */
+}
+
+#mainheadtitle {
+    float: left;
+    padding: 10px 20px;
+    width: 35%;
+    background: #4aaaa5;
+    color: #ffffff;
+   
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: inline-block;
+    color: #777777;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: red;
+}
+
+h1 {
+  /* Box-model */
+  /* padding: 20px; */
+
+  /* Positioning */
+  /* margin: 0;
+  margin-bottom: 20px; */
+  font-size: 28px;
+
+  /* Typography */
+
+  font-family: 'Georgia', Times, Times New Roman, serif;
+
+  /* Visual */
+ 
+}
+
+hr {
+    height: 0px;
+    border-color: inherit;
+    background-color: #ffffff;
+}
+
+#aboutme {
+    color: #4aaaa5;
+    /* padding-top: 20px; */
+}
+
+#main-bio {
+    position: relative;
+    top: 20px;
+    background-color: #ffffff;
+    border-color: #dddddd;
+    color: #777777;
+    padding: 10px 20px 20px 20px;
+}

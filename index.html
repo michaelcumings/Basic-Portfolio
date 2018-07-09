@@ -1,43 +1,53 @@
-<!-- HTML Bio with TWO CSS fies -->
+<!-- Basic Portfolio Homework #1 -->
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
 
   <meta charset="UTF-8">
-  <title>1.2.9 Exercise</title>
+  <title>Michael Cumings's Basic Portfolio website</title>
 
-  <!-- This critical line points your HTML to the CSS file. Notice the "relative" pathway  -->
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-  <!-- And now we have a second stylesheet! -->
-  <link rel="stylesheet" type="text/css" href="style2.css">
 
 </head>
 
 <body>
+  <div class="everything">  
   <header>
+        <div id="mainheadtitle">
     <h1>Michael Cumings</h1>
+        </div>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#news">Portfolio</a></li>
+            <li><a href="#home" class="active">About</a></li>
+        </ul>
   </header>
 
   <div class="container">
 
     <section id="main-bio">
 
-      <h2>About Me</h2>
-      <img src="./assets/images/biopic.png" alt="My laptop can take pictures--JEALOUS??" id="bio-image">
+      <section id="aboutme"><h1>About Me</h1></section>
+      <hr>
+      <img src="./assets/images/biopic.png" alt="My laptop can take pictures--JEALOUS??" id="bio-image" align=left>
       <p>Michael Cumings is a new web developer living in rural Minnesota with his two children, who love playing video games with their father and hate any food he prepares for them (yes, peanut butter and jelly is tasty, but come on already).</p>
       <p>He has some web coding experience from before CSS was in wide use and tags like &lt;center&gt; and &lt;i&gt; were still used to provide specific formatting in HTML even though he knew that specific directives for formatting text on the web was for super lame normies and that the people worth impressing browsed the web using <a href="https://lynx.invisible-island.net/" target="_blank">lynx</a>.  He is aware that the world has gone in a different direction and is eager to learn about making pretty websites.</p>
+      <p>He hopes to have something more interesting and informative to put here later on.</p>
 
     </section>
 
-    <section id="contact-info">
+    <footer>Copyright &copy; 2018 by Michael Cumings</footer>
+
+    <!-- <section id="contact-info">
       <h2>Contact Info</h2>
       <ul>
         <li><strong>Email:</strong> <a href="#">someplace@gmail.com</a></li>
         <li><strong>Github:</strong> <a href="#">sampleName</a></li>
         <li><strong>Portfolio:</strong> <a href="#">coming soon</a></li>
       </ul>
-    </section>
+    </section> -->
+  </div>  
   </div>
 
 </body>
