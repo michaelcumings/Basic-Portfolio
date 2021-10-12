@@ -383,254 +383,254 @@
                     // $(`#${selectedPiece}`).attr("cx", element.attr("cx"));
                     // $(`#${selectedPiece}`).attr("cy", element.attr("cy"));
                     // ADD later: push move to move list in the db
-                switch (selectedPiece) {
-                  case "black1":
-                    $("#black1").attr("cx", element.attr("cx"));
-                    $("#black1").attr("cy", element.attr("cy"));
-                    // alert("black1Location preassign " + black1Location);
-                    // alert("element.id " + element.attr("id"));
-                    black1Location = element.attr("id");
-                    // alert("black1Location postassign " + black1Location);
-                    break;
-                  case "black2":
-                    $("#black2").attr("cx", element.attr("cx"));
-                    $("#black2").attr("cy", element.attr("cy"));
-                    black2Location = element.attr("id");
-                    break;
-                  case "black3":
-                    $("#black3").attr("cx", element.attr("cx"));
-                    $("#black3").attr("cy", element.attr("cy"));
-                    black3Location = element.attr("id");
-                    break;
-                  default:
-                    break;
-        }
-        selectedPiece = [];
-        $(".node").removeClass("active");
-        // if ($("#white").attr("cx") === $("#m1").attr("cx")) {
-        //   alert("White Wins!"); // ADD later: white wins, push to database, update "to move" div with the news
-        //   return;
-        // }
-        
-        if (
-          $("#white").attr("cx") === $("#m5").attr("cx") &&
-          $("#black1").attr("cx") === $("#m4").attr("cx") &&
-          $("#black2").attr("cx") === $("#m4").attr("cx") &&
-          $("#black3").attr("cx") === $("#m4").attr("cx")
-        ) {
-          alert("Black Wins!"); // ADD later: black wins, push to database, update "to move" div with the news
-          return;
-        }
-          whoseTurn = "white";
-          // ADD: Push new turn indicator to the db
-      }
+                    switch (selectedPiece) {
+                      case "black1":
+                        $("#black1").attr("cx", element.attr("cx"));
+                        $("#black1").attr("cy", element.attr("cy"));
+                        // alert("black1Location preassign " + black1Location);
+                        // alert("element.id " + element.attr("id"));
+                        black1Location = element.attr("id");
+                        // alert("black1Location postassign " + black1Location);
+                        break;
+                      case "black2":
+                        $("#black2").attr("cx", element.attr("cx"));
+                        $("#black2").attr("cy", element.attr("cy"));
+                        black2Location = element.attr("id");
+                        break;
+                      case "black3":
+                        $("#black3").attr("cx", element.attr("cx"));
+                        $("#black3").attr("cy", element.attr("cy"));
+                        black3Location = element.attr("id");
+                        break;
+                      default:
+                        break;
+                    }
+                    selectedPiece = [];
+                    $(".node").removeClass("active");
+                    // if ($("#white").attr("cx") === $("#m1").attr("cx")) {
+                    //   alert("White Wins!"); // ADD later: white wins, push to database, update "to move" div with the news
+                    //   return;
+                    // }
+            
+                    if (
+                      $("#white").attr("cx") === $("#m5").attr("cx") &&
+                      $("#black1").attr("cx") === $("#m4").attr("cx") &&
+                      $("#black2").attr("cx") === $("#m4").attr("cx") &&
+                      $("#black3").attr("cx") === $("#m4").attr("cx")
+                      ) {
+                      alert("Black Wins!"); // ADD later: black wins, push to database, update "to move" div with the news
+                      return;
+                      }
+                    whoseTurn = "white";
+                    // ADD: Push new turn indicator to the db
+                  }
+                })
+            }
         })
-      }
-})
 
-  $(".whitepiece").on(
-    "click", function() {
-      let element = $(this);
-      if (
-        whoseTurn === "white"
-        // && whitePlayer === displayName // displayName is from firebase authentication
-      ) {
-        // if (selectedPiece === ("black1" || "black2" || "black3")) {
-        //   selectedPiece = [];
-        //   $(".node").removeClass("active");
-        //   return;
-        // }
-        selectedPiece = [];
-        startLocation = [];
-        selectedPiece = this.id;
-        startLocation = whiteLocation;
-        // switch (selectedPiece) {
-        //   case "black1":
-        //     startLocation = black1Location;
-        //     break;
-        //   case "black2":
-        //     startLocation = black2Location;
-        //     break;
-        //   case "black3":
-        //     startLocation = black3Location;
-        //     break;
-        //   default:
-        //     break;
-        // }
-        // if (startLocation === "t2") {
-        //     alert("good!");
-        // }
-        // alert(whiteMoves[startLocation]);
-        whiteMoves[startLocation].forEach(value => {
-          $(`#${value}`).addClass("active");
-        });
-        // active();
-    $(".active").on(
-      "click", function() {
-        let element = $(this);
-        //     $(".active").on(
-        // "click", (() => {
-        //   const whiteSourceX = $("#" + selectedPiece).attr("cx");
-        //   const whiteTargetX = element.attr("cx");
-        //   alert(whiteSourceX);
-        //   alert(whiteTargetX);
-        //   if (
-        //     selectedPiece === ("black1" || "black2" || "black3") &&
-        //     blackSourceX === blackTargetX
-        //   ) {
-        //     lateralMoves++;
-        //     // send updated lateralMoves to db
-        //     if (lateralMoves >= 10) {
-        //       // ADD later: white wins, push to database, update "to move" div with the news
-        //       return;
-        //     }
-        // }
-        // alert("call1" + $(`#${selectedPiece}`).attr("cx"));
-        // alert("call2" + element.attr("cx"));
-        if (whoseTurn === "white") {
-          $("#white").attr("cx", element.attr("cx"));
-          $("#white").attr("cy", element.attr("cy"));
+      $(".whitepiece").on(
+        "click", function() {
+          let element = $(this);
+          if (
+            whoseTurn === "white"
+            // && whitePlayer === displayName // displayName is from firebase authentication
+            ) {
+              // if (selectedPiece === ("black1" || "black2" || "black3")) {
+              //   selectedPiece = [];
+              //   $(".node").removeClass("active");
+              //   return;
+              // }
+              selectedPiece = [];
+              startLocation = [];
+              selectedPiece = this.id;
+              startLocation = whiteLocation;
+              // switch (selectedPiece) {
+              //   case "black1":
+              //     startLocation = black1Location;
+              //     break;
+              //   case "black2":
+              //     startLocation = black2Location;
+              //     break;
+              //   case "black3":
+              //     startLocation = black3Location;
+              //     break;
+              //   default:
+              //     break;
+              // }
+              // if (startLocation === "t2") {
+              //     alert("good!");
+              // }
+              // alert(whiteMoves[startLocation]);
+              whiteMoves[startLocation].forEach(value => {
+                $(`#${value}`).addClass("active");
+              });
+              // active();
+              $(".active").on(
+                "click", function() { 
+                  let element = $(this);
+                  //     $(".active").on(
+                  // "click", (() => {
+                  //   const whiteSourceX = $("#" + selectedPiece).attr("cx");
+                  //   const whiteTargetX = element.attr("cx");
+                  //   alert(whiteSourceX);
+                  //   alert(whiteTargetX);
+                  //   if (
+                  //     selectedPiece === ("black1" || "black2" || "black3") &&
+                  //     blackSourceX === blackTargetX
+                  //   ) {
+                  //     lateralMoves++;
+                  //     // send updated lateralMoves to db
+                  //     if (lateralMoves >= 10) {
+                  //       // ADD later: white wins, push to database, update "to move" div with the news
+                  //       return;
+                  //     }
+                  // }
+                  // alert("call1" + $(`#${selectedPiece}`).attr("cx"));
+                  // alert("call2" + element.attr("cx"));
+                  if (whoseTurn === "white") {
+                    $("#white").attr("cx", element.attr("cx"));
+                    $("#white").attr("cy", element.attr("cy"));
+                  
+                    // ADD later: push move to move list in the db
+                    whiteLocation = element.attr("id");
+                    selectedPiece = [];
+                    $(".node").removeClass("active");
+                    // if ($("#white").attr("cx") === $("#m1").attr("cx")) {
+                    if (whiteLocation === "m1") {
+                      alert("White Wins!"); // ADD later: white wins, push to database, update "to move" div with the news
+                      return;
+                    }
         
-          // ADD later: push move to move list in the db
-          whiteLocation = element.attr("id");
-          selectedPiece = [];
-          $(".node").removeClass("active");
-          // if ($("#white").attr("cx") === $("#m1").attr("cx")) {
-          if (whiteLocation === "m1") {
-            alert("White Wins!");// ADD later: white wins, push to database, update "to move" div with the news
-            return;
-          }
-        
-          // if (
-          //   $("#white").attr("cx") === $("#m5").attr("cx") &&
-          //   $("#black1").attr("cx") === $("#m4").attr("cx") &&
-          //   $("#black2").attr("cx") === $("#m4").attr("cx") &&
-          //   $("#black3").attr("cx") === $("#m4").attr("cx")
-          // ) {
-          //   alert("Black Wins!");
-          //   // ADD later: black wins, push to database, update "to move" div with the news
-          //   return;
-          // }
-          whoseTurn = "black";
-          // ADD: Push new turn indicator to the db
-      }
-      })
-    }
-})
+                    // if (
+                    //   $("#white").attr("cx") === $("#m5").attr("cx") &&
+                    //   $("#black1").attr("cx") === $("#m4").attr("cx") &&
+                    //   $("#black2").attr("cx") === $("#m4").attr("cx") &&
+                    //   $("#black3").attr("cx") === $("#m4").attr("cx")
+                    // ) {
+                    //   alert("Black Wins!");
+                    //   // ADD later: black wins, push to database, update "to move" div with the news
+                    //   return;
+                    // }
+                    whoseTurn = "black";
+                    // ADD: Push new turn indicator to the db
+                  }
+                })
+              }
+        })
 
         // for (i = 0; i < blackMoves.startLocation.length; i++) {
         //   $(`#${blackMoves.startLocation[i]}`).addClass("active"); // highlight the possible destinations
         // }
  
 
-  // if (whoseTurn === "white") {
-  //   selectedPiece = "white";
-  //   startLocation = whiteLocation;
+        // if (whoseTurn === "white") {
+        //   selectedPiece = "white";
+        //   startLocation = whiteLocation;
 
-  //   whiteMoves[startLocation].forEach(value => {
-  //   $(`#${value}`).addClass("active");
-    
+        //   whiteMoves[startLocation].forEach(value => {
+        //   $(`#${value}`).addClass("active");
+          
 
-  //   // for (i = 0; i < whiteMoves.startLocation.length; i++) {
-  //   //   $(`#${whiteMoves.startLocation[i]}`).addClass("active"); // highlight the possible destinations
-  //   })
-  //   $(".active").on(
-  //   "click", function() {
-  //       let element = $(this);
-  //       //     $(".active").on(
-  //   // "click", (() => {
-  //     const blackSourceX = $("#" + selectedPiece).attr("cx");
-  //     const blackTargetX = element.attr("cx");
-  //     alert(blackSourceX);
-  //     alert(blackTargetX);
-  //     if (
-  //       selectedPiece === ("black1" || "black2" || "black3") &&
-  //       blackSourceX === blackTargetX
-  //     ) {
-  //       lateralMoves++;
-  //       // send updated lateralMoves to db
-  //       if (lateralMoves >= 10) {
-  //         // ADD later: white wins, push to database, update "to move" div with the news
-  //         return;
-  //       }
-  //   }
-  //       alert("call1" + $(`#${selectedPiece}`).attr("cx"));
-  //       alert("call2" + element.attr("cx"));
-  //       $(`#${selectedPiece}`).attr("cx", element.attr("cx"));
-  //       $(`#${selectedPiece}`).attr("cy", element.attr("cy"));
-  //       // ADD later: push move to move list in the db
-  //       selectedPiece = [];
-  //       $(".node").removeClass("active");
-  //       if ($("#white").attr("cx") === $("#m1").attr("cx")) {
-  //         // ADD later: white wins, push to database, update "to move" div with the news
-  //         return;
-  //       }
-        
-  //       if (
-  //         $("#white").attr("cx") === $("#m5").attr("cx") &&
-  //         $("#black1").attr("cx") === $("#m4").attr("cx") &&
-  //         $("#black2").attr("cx") === $("#m4").attr("cx") &&
-  //         $("#black3").attr("cx") === $("#m4").attr("cx")
-  //       ) {
-  //         // ADD later: black wins, push to database, update "to move" div with the news
-  //         return;
-  //       }
-  //       if (whoseTurn === "black") {
-  //         whoseTurn = "white";
-  //         // ADD: Push new turn indicator to the db
-  //         return;
-  //       } else if (whoseTurn === "white") {
-  //         whoseTurn = "black";
-  //         // ADD: Push new turn indicator to the db
-  //         return;
-  //       }
-  //     })
-  // }
+        //   // for (i = 0; i < whiteMoves.startLocation.length; i++) {
+        //   //   $(`#${whiteMoves.startLocation[i]}`).addClass("active"); // highlight the possible destinations
+        //   })
+        //   $(".active").on(
+        //   "click", function() {
+        //       let element = $(this);
+        //       //     $(".active").on(
+        //   // "click", (() => {
+        //     const blackSourceX = $("#" + selectedPiece).attr("cx");
+        //     const blackTargetX = element.attr("cx");
+        //     alert(blackSourceX);
+        //     alert(blackTargetX);
+        //     if (
+        //       selectedPiece === ("black1" || "black2" || "black3") &&
+        //       blackSourceX === blackTargetX
+        //     ) {
+        //       lateralMoves++;
+        //       // send updated lateralMoves to db
+        //       if (lateralMoves >= 10) {
+        //         // ADD later: white wins, push to database, update "to move" div with the news
+        //         return;
+        //       }
+        //   }
+        //       alert("call1" + $(`#${selectedPiece}`).attr("cx"));
+        //       alert("call2" + element.attr("cx"));
+        //       $(`#${selectedPiece}`).attr("cx", element.attr("cx"));
+        //       $(`#${selectedPiece}`).attr("cy", element.attr("cy"));
+        //       // ADD later: push move to move list in the db
+        //       selectedPiece = [];
+        //       $(".node").removeClass("active");
+        //       if ($("#white").attr("cx") === $("#m1").attr("cx")) {
+        //         // ADD later: white wins, push to database, update "to move" div with the news
+        //         return;
+        //       }
+              
+        //       if (
+        //         $("#white").attr("cx") === $("#m5").attr("cx") &&
+        //         $("#black1").attr("cx") === $("#m4").attr("cx") &&
+        //         $("#black2").attr("cx") === $("#m4").attr("cx") &&
+        //         $("#black3").attr("cx") === $("#m4").attr("cx")
+        //       ) {
+        //         // ADD later: black wins, push to database, update "to move" div with the news
+        //         return;
+        //       }
+        //       if (whoseTurn === "black") {
+        //         whoseTurn = "white";
+        //         // ADD: Push new turn indicator to the db
+        //         return;
+        //       } else if (whoseTurn === "white") {
+        //         whoseTurn = "black";
+        //         // ADD: Push new turn indicator to the db
+        //         return;
+        //       }
+        //     })
+        // }
 
-// function active() {
-//   $(".active").on(
-//     "click", (() => {
-//       const blackSourceX = $("#" + selectedPiece).attr("cx");
-//       const blackTargetX = $(this).attr("cx");
-//       if (
-//         selectedPiece === ("black1" || "black2" || "black3") &&
-//         blackSourceX === blackTargetX
-//       ) {
-//         lateralMoves++;
-//         // send updated lateralMoves to db
-//         if (lateralMoves >= 10) {
-//           // ADD later: white wins, push to database, update "to move" div with the news
-//           return;
-//         }
-//         $(`#${selectedPiece}`).attr("cx", $(this).attr("cx"));
-//         $(`#${selectedPiece}`).attr("cy", $(this).attr("cy"));
-//         // ADD later: push move to move list in the db
-//         selectedPiece = [];
-//         $(".node").removeClass("active");
-//         if ($("#white").attr("cx") === $("#m1").attr("cx")) {
-//           // ADD later: white wins, push to database, update "to move" div with the news
-//           return;
-//         }
-//         if (
-//           $("#white").attr("cx") === $("#m5").attr("cx") &&
-//           $("#black1").attr("cx") === $("#m4").attr("cx") &&
-//           $("#black2").attr("cx") === $("#m4").attr("cx") &&
-//           $("#black3").attr("cx") === $("#m4").attr("cx")
-//         ) {
-//           // ADD later: black wins, push to database, update "to move" div with the news
-//           return;
-//         }
-//         if (whoseTurn === "black") {
-//           whoseTurn = "white";
-//           // ADD: Push new turn indicator to the db
-//         } else if (whoseTurn === "white") {
-//           whoseTurn = "black";
-//           // ADD: Push new turn indicator to the db
-//         }
-//       }
-//     })
-//   )}
-})
+        // function active() {
+        //   $(".active").on(
+        //     "click", (() => {
+        //       const blackSourceX = $("#" + selectedPiece).attr("cx");
+        //       const blackTargetX = $(this).attr("cx");
+        //       if (
+        //         selectedPiece === ("black1" || "black2" || "black3") &&
+        //         blackSourceX === blackTargetX
+        //       ) {
+        //         lateralMoves++;
+        //         // send updated lateralMoves to db
+        //         if (lateralMoves >= 10) {
+        //           // ADD later: white wins, push to database, update "to move" div with the news
+        //           return;
+        //         }
+        //         $(`#${selectedPiece}`).attr("cx", $(this).attr("cx"));
+        //         $(`#${selectedPiece}`).attr("cy", $(this).attr("cy"));
+        //         // ADD later: push move to move list in the db
+        //         selectedPiece = [];
+        //         $(".node").removeClass("active");
+        //         if ($("#white").attr("cx") === $("#m1").attr("cx")) {
+        //           // ADD later: white wins, push to database, update "to move" div with the news
+        //           return;
+        //         }
+        //         if (
+        //           $("#white").attr("cx") === $("#m5").attr("cx") &&
+        //           $("#black1").attr("cx") === $("#m4").attr("cx") &&
+        //           $("#black2").attr("cx") === $("#m4").attr("cx") &&
+        //           $("#black3").attr("cx") === $("#m4").attr("cx")
+        //         ) {
+        //           // ADD later: black wins, push to database, update "to move" div with the news
+        //           return;
+        //         }
+        //         if (whoseTurn === "black") {
+        //           whoseTurn = "white";
+        //           // ADD: Push new turn indicator to the db
+        //         } else if (whoseTurn === "white") {
+        //           whoseTurn = "black";
+        //           // ADD: Push new turn indicator to the db
+        //         }
+        //       }
+        //     })
+        //   )}
+    })
   </script>
               
 </body>
